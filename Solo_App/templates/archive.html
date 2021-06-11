@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Homenaje&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>Archive</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body class="archive">
+    {% include 'partials/nav.html' %}
+    <div>
+        <h4>Welcome {{ request.session.alias }}!</h4>
+    </div>
+
+    <div class="container py-2">
+        <div>
+            <h1>Archive</h1>
+        </div>
+        <p>Archive of games previously posted.</p>
+        <hr />
+    </div>
+
+    <div>
+        <h4>Altered Beast</h4>
+        <img src="{% static 'images/010.png' %}" alt="" height="200" width="125" />
+        <div>
+            <a href="https://en.wikipedia.org/wiki/Altered_Beast">Source</a>
+        </div>
+    </div>
+
+    <hr />
+    
+    <div>
+        <h4>Space Channel 5</h4>
+        <img src="{% static 'images/011.jpg' %}" alt="" height="200" width="200" />
+        <div>
+            <a href="https://en.wikipedia.org/wiki/Space_Channel_5">Source</a>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

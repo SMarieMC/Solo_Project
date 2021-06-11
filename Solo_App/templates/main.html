@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Homenaje&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>Sega Games!</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body class="wallpaper">
+
+    {% include 'partials/nav.html' %}
+
+    <div class="container py-2">
+        <h4>Welcome {{ request.session.alias }}!</h4>
+
+        <div class="games">
+            <h1>Sega Games!</h1>
+            <div>
+                <h3>This Month's Featured Game:</h3>
+                <h4>Sonic the Hedgehog</4>
+                    <div>
+                        <img src="{% static 'images/003.jpg' %}" alt="" height="200" width="125" />
+                    </div>
+                    <div class="sonic1">
+                        {% include 'partials/game.html' %}
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="container">
+        <div class="comment">
+            <h3>Comments</h3>
+            <p>Let me know what you think about SEGA games. What is you're favorite system? What is your
+                favorite
+                game?
+                Anything SEGA related. Post in the comments.</p>
+            <form action="/add-comment" method="POST">
+                {% csrf_token %}
+                <textarea name="comments" id="" cols="25" rows="2"></textarea>
+                <div>
+                    <input type="submit" value="Add comment">
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

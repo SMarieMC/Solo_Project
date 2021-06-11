@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Homenaje&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>Login/Registration</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+
+
+<body id="body">
+
+    <h1 class="welcome">Welcome to the Sega Fanpage!</h1>
+
+    <div class="container bg-primary my-2 py-1">
+        <div class="row my-5 mr-5">
+            <div class="col">
+                <h2>Please Login!</h2>
+                <hr>
+                <div class="col">
+                    <form action="/login-user" method="POST">
+                        {% csrf_token %}
+                        <div class="col mx-3">Email: <input type="email" name="email" /></div>
+                        <div class="p-2"></div>
+                        <div class="col py-2">Password: <input type="password" name="password" /></div>
+                        <div class="container mx-5">
+                            <input type="submit" value="Login">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container bg-primary my-2">
+        <div class="row">
+            <div class="col py-1">
+                <h2>Sign Up!</h2>
+                <hr>
+                <form action="/reg-user" method="POST">
+                    {% csrf_token %}
+                    <div class="col p-2">Name: <input type="text" name="name" /></div>
+                    <div class="col p-2 mx-1">Alias: <input type="text" name="alias" /></div>
+                    <div class="col p-2">Email: <input type="email" name="email" /></div>
+                    <div class="col p-2">Password: <input type="password" name="password" /></div>
+                    <div class="col p-2 mr-1">Confirm Password: <input type="password" name="confirm" /></div>
+                    <div class="container mx-5">
+                        <input type="submit" value="Sign Up!">
+                    </div>
+                    <div class="col py-1">
+                        <p>Password must be more than eight characters.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="warning">
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    </div>
+</body>
+
+</html>

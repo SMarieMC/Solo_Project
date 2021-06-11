@@ -1,0 +1,97 @@
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+p,
+blockquote,
+table,
+th,
+td,
+embed,
+object {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-family: 'Homenaje', sans-serif;
+  /* CSS reset */
+}
+
+#body {
+  background-color: royalblue;
+  background-image: url("/static/images/008.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  color: aliceblue;
+}
+
+.wallpaper {
+  background-image: url("/static/images/006.jpg");
+  height: 650px;
+  background-color: #1c1d24;
+  background-attachment: fixed;
+  background-position: center;
+  color: azure;
+}
+
+.welcome, .games {
+  text-align: center;
+  text-shadow: 2px 2px blue;
+}
+
+.comment {
+  text-align: center;
+}
+
+.comments{
+  margin: 60px;
+  text-shadow: 1px solid black;
+  background-image: url("/static/images/005.jpg");
+  opacity: 0.8;
+  padding-left: 10px;
+}
+
+.feed {
+  text-align: center;
+  padding-bottom: 2px;
+  padding-top: 2px;
+}
+
+.profile {
+  text-align: center;
+}
+
+.archive {
+  text-align: center;
+  text-shadow: 2px 2px blue;
+  color: aliceblue;
+  background-image: url("/static/images/007.jpeg");
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.sonic1 {
+  font-size: 20px;
+  padding-top: 15px;
+}
+
+.warning {
+  color: red;
+  font-size: 20px;
+  font-weight: bolder;
+  text-align: center;
+  background-color: black;
+}
